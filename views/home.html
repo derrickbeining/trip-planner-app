@@ -2,6 +2,12 @@
 
 {% block content %}
 <h1>Welcome to Home!</h1>
-<!-- {% } -->
-
+  <form>
+    <label for="hotel">Hotel</label>
+    <select id ="hotel" name="hotel">
+      {% for hotel in hotels %}
+       <option value="{{hotel.name}}">{{hotel.name}}</option>
+      {% endfor %}
+    </select>
+  </form>
 {% endblock %}

@@ -4,24 +4,22 @@ const app = express();
 const db = require('./models');
 const nunjucks = require('nunjucks');
 
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const path = require('path');
+
+
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 nunjucks.configure('views', { noCache: true });
 
-const morgan = require('morgan');
 app.use(morgan('dev'));
-
-const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
-const path = require('path');
 app.use(express.static(path.join(__dirname, '/public')));
-
-app.use('/', Router);
-
+app.use(Router);
 app.use(function (err, req, res, next) {
-  console.log("error page");
+  console.log(err);
   res.render('error');
 });
 

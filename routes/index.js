@@ -1,13 +1,19 @@
-const express = require('express');
-const app = express();
+const express = require( 'express' );
 const router = express.Router();
-const db = require('../models');
-const nunjucks = require('nunjucks');
+var db = require( '../models' );
+var Place = db.models.place;
+var Hotel = db.models.hotel;
+var Restaurant = db.models.restaurant;
+var Activity = db.models.activity;
 
+router.get( '/', function ( req, res ) {
+  Hotel.findAll( {} )
+    .then( hotels => {
+      res.render( 'home', {
+        hotels: hotels
+      } )
 
-router.get('/', function(res, req) {
-    console.log("home page");
-    res.render('home');
-  });
+    } );
+} );
 
 module.exports = router;
