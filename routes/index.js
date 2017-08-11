@@ -7,13 +7,25 @@ var Restaurant = db.models.restaurant;
 var Activity = db.models.activity;
 
 router.get( '/', function ( req, res ) {
+
+
+  //var arrOfPromises = [Hotel.findAll({}), Place.f]
+  let results = {};
+
   Hotel.findAll( {} )
     .then( hotels => {
-      res.render( 'home', {
-        hotels: hotels
-      } )
+      results.hotels = hotels;
+      return Restaurant.findAll({})
+    })
+    .then(restaurants => {
+      results.restaurants = restaurants;
+      return Activity.findAll({});
+    })
+    .then(activities => {
+      results.activities = activities;
+      res.render( 'home', results );
+    });
 
-    } );
 } );
 
 module.exports = router;
