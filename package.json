@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:production": "node app.js",
-    "start:dev": "nodemon -e html,css,js app.js",
+    "start:dev": "nodemon -e html,css,js app.js;",
     "start": "npm run start:dev",
     "build:css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
   },
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "node-sass": "^4.5.3",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "reload": "^2.2.1"
   }
 }

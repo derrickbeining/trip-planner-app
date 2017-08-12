@@ -1,5 +1,9 @@
-const Sequelize = require('sequelize');
-const db = new Sequelize('postgres://localhost:5432/tripplanner');
+const Sequelize = require( 'sequelize' );
+const db = new Sequelize(
+  'postgres://localhost:5432/tripplanner', {
+    logging: false,
+    typeValidation: true
+  } );
 
 const Place = db.define( 'place', {
   address: {
@@ -30,7 +34,7 @@ const Hotel = db.define( 'hotel', {
     validate: {
       isBetween1And5: ( value ) => {
         if ( value < 1 || value > 5 ) {
-          throw new Error('Rating out of range. Must be between 1 and 5.')
+          throw new Error( 'Rating out of range. Must be between 1 and 5.' )
         }
       }
     }
@@ -65,7 +69,7 @@ const Restaurant = db.define( 'restaurant', {
     type: Sequelize.INTEGER,
     notNull: true,
   }
-})
+} )
 
 Restaurant.hook( 'beforeValidate',
   function ( restaurant ) {
