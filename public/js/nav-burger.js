@@ -1,34 +1,27 @@
-( function () {
+// BULMA NAVBURGER JS /////////////////////////
 
-  // Definition of caller element
-  var getTriggerElement = function ( el ) {
-    var isCollapse = el.getAttribute( 'data-collapse' );
-    if ( isCollapse !== null ) {
-      return el;
-    } else {
-      var isParentCollapse = el.parentNode.getAttribute( 'data-collapse' );
-      return ( isParentCollapse !== null ) ? el.parentNode : undefined;
-    }
-  };
+document.addEventListener('DOMContentLoaded', function () {
 
-  // A handler for click on toggle button
-  var collapseClickHandler = function ( event ) {
-    var triggerEl = getTriggerElement( event.target );
-    // If trigger element does not exist
-    if ( triggerEl === undefined ) {
-      event.preventDefault();
-      return false;
-    }
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    // If the target element exists
-    var targetEl = document.querySelector( triggerEl.getAttribute( 'data-target' ) );
-    if ( targetEl ) {
-      triggerEl.classList.toggle( '-active' );
-      targetEl.classList.toggle( '-on' );
-    }
-  };
+  // Check if there are any nav burgers
+  if ($navbarBurgers.length > 0) {
 
-  // Delegated event
-  document.addEventListener( 'click', collapseClickHandler, false );
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
 
-} )( document, window );
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});

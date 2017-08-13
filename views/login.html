@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+    </head>
+    <body>
+        {% include "./partials/outdated-browser-check.html" %}
+        <main>
+            <form class="signup-form" action="/signup/" method="post">
+                <h1 class="signup-header center-text">Sign up</h1>
+                <label for="email" class="signup-label">Email</label>
+                <input id="email" type="email" class="signup-input-text" placeholder="foo@bar.com" required>
+                <label for="password" class="signup-label">Password</label>
+                <input id="password" type="password" class="signup-input-text" placeholder="1234pssw0rd" required>
+                <button type="submit" class="signup-btn">Sign up</button>
+                <a class="signup-forgot-password" href="#">Forgot password?</a>
+            </form>
+            <p class="center white strong small-text">Already have an account? <a class="white" href="#" target="_self">Log in</a></p>
+        </main>
+{% endblock %}

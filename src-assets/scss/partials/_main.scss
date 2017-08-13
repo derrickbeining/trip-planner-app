@@ -1,0 +1,60 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 14px;
+  font-family: Verdana, Arial, sans-serif;
+  line-height: 20px;
+}
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+.area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+  .area {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 14px
+  }
+  .area {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+  .area {
+    width: 1140px;
+  }
+}
+
+.container {
+  padding: 10px 20px;
+  max-width: 80%;
+}

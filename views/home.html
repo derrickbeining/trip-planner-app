@@ -1,4 +1,10 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% block content %}
+</head>
+<body>
+  {% include "./partials/outdated-browser-check.html" %}
+  {% include "./partials/nav-top-main.html" %}
+
 <main class="container">
   <h1>Welcome to Home!</h1>
   <form>

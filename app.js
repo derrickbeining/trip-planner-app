@@ -11,7 +11,7 @@ const Router = require( './routes' );
 const errorHandler = require( './routes/errors' )
 const reload = require( 'reload' );
 
-app.set( 'port', process.env.PORT || 1337 );
+app.set( 'port', process.env.PORT || 3000 );
 app.set( 'view engine', 'html' );
 app.engine( 'html', nunjucks.render );
 nunjucks.configure( 'views', {
