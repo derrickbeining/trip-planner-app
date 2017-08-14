@@ -5729,21 +5729,26 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 html {
-  height: 100vh;
-  min-height: 600px;
-  max-height: 100vh; }
+  min-height: 600px; }
 
 body {
-  height: 100vh;
   min-height: 600px;
-  max-height: 100vh;
   position: relative; }
 
 .bottom-out {
-  position: absolute;
   bottom: -25px;
   left: 0;
+  position: absolute;
   width: 100%; }
+
+.fa-plus-gray {
+  color: gray; }
+
+.fa-star {
+  color: gold; }
+
+.fa-dollar {
+  color: olivedrab; }
 
 .is-thumbable * {
   min-height: 30px; }
