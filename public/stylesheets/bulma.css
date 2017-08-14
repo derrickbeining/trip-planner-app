@@ -5730,26 +5730,26 @@ label.panel-block {
 
 html {
   height: 100vh;
+  min-height: 600px;
   max-height: 100vh; }
 
 body {
   height: 100vh;
+  min-height: 600px;
   max-height: 100vh;
   position: relative; }
 
 .bottom-out {
   position: absolute;
-  width: 100%;
   bottom: -25px;
-  left: 0; }
+  left: 0;
+  width: 100%; }
 
 .is-thumbable * {
   min-height: 30px; }
 
 .map-ui {
-  margin: 0 auto;
-  width: 100%;
-  height: 50vh; }
+  margin: 0 auto; }
   @media only screen and (min-width: 320px) {
     .map-ui {
       height: 40vh;
@@ -5757,6 +5757,6 @@ body {
   @media only screen and (min-width: 768px) {
     .map-ui {
       height: 40vh;
-      min-width: 768;
-      width: 100%;
-      max-width: 900px; } }
+      width: 100%; } }
+  .map-ui .user-plans-display {
+    background-image: linear-gradient(); }

@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block content %}
+</head>
+
+<body>
+  {% include "./partials/outdated-browser-check.html" %}
+  <div class="container">
+    {% include "./partials/nav-top-main.html" %}
+  </div>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        {% include "./partials/GoogleMap.html"%}
+
+      </div>
+      <div class="column">
+        {% include "./partials/user-plans.html" %}
+
+      </div>
+    </div>
+
+  </div>
+  {% endblock %}

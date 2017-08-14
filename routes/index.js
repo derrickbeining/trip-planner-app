@@ -25,7 +25,7 @@ function renderWithAllData (res) {
     } )
     .then( activities => {
       results.activities = activities;
-      res.render( 'home', results );
+      res.render( 'standard-views/home', results );
     } );
 }
 

@@ -14,7 +14,7 @@ const reload = require( 'reload' );
 app.set( 'port', process.env.PORT || 3000 );
 app.set( 'view engine', 'html' );
 app.engine( 'html', nunjucks.render );
-nunjucks.configure( 'views', {
+nunjucks.configure( 'views/standard-views', {
   noCache: true,
   trimBlocks: true,
   lstripBlocks: true,

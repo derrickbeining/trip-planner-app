@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block content %}
+</head>
+
+<body>
+  {% include "./partials/outdated-browser-check.html" %}
+  <div class="container">
+    {% include "./partials/nav-top-main.html" %}
+  </div>
+
+  <div class="container">
+    {% include "./partials/GoogleMap.html"%} {% include "./partials/app-controls-days.html" %}
+
+    <form>
+      <div class="container is-fluid">
+      <div class="field">
+        <label class="label" for="hotel">Hotels</label>
+        <div class="select is-fullwidth is-small">
+          <select class="select" id="hotel" name="hotel">
+      {% for hotel in hotels %}
+       <option value="{{hotel.name}}">{{hotel.name}}</option>
+      {% endfor %}
+    </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="restaurant">Restaurants</label>
+        <div class="select is-fullwidth is-small">
+          <select class="select" id="restaurant" name="restaurant">
+                  {% for restaurant in restaurants %}
+                   <option value="{{restaurant.name}}">
+                   {{restaurant.name}}
+                   </option>
+                  {% endfor %}
+              </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="activity">Activities</label>
+        <div class="select is-fullwidth is-small">
+          <select class="select" id="activity" name="activity">
+              {% for activity in activities %}
+              <option value="{{activity.name}}">{{activity.name}}</option>
+              {% endfor %}
+            </select>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+  <div class=" bottom-out">
+    <div class="container">
+      {% include "./partials/nav-bottom.html" %} {% endblock %}
+    </div>
+  </div>
