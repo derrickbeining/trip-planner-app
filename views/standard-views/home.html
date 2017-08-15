@@ -15,12 +15,16 @@
 
     <div class="container">
       <div class="tile is-ancestor">
+        <div class="tile is-8">
         <div class="tile is-parent">
           {% include "./partials/GoogleMap.html"%}
         </div>
+      </div>
 
         <div class="tile is-parent">
+            <div class="tile is-child box content">
           {% include "./partials/user-plans.html" %}
+            </div>
         </div>
       </div>
 
@@ -512,11 +516,11 @@
               <article class="tile is-child notification">
                 <p class="title">Search Results</p>
 
-                <p class="subtitle">Where results feed populates</p>
+                <p class="subtitle"># of # results for "{search-term}"</p>
 
                 <div class="content">
                   <!-- Content -->
-                  {% for result in results %}
+                  {% for restaurant in restaurants %}
                     {% include "./partials/search-result.html" %}
                   {% endfor %}
                 </div>
