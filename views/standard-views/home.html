@@ -1,536 +1,590 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %}
+{% block content %}
 
 <body>
   {% include "./partials/outdated-browser-check.html" %}
 
   <div class="container">
-    {% include "./partials/nav-top-main.html" %}
+    <div class="container is-fluid">
+      {% include "./partials/nav-top-main.html" %}
+
+      <form
+        id="search-touch-devices-only"
+        class="field"
+      >
+        <div class="level is-hidden-desktop">
+          <!-- SEARCHBAR FOR TOUCH DEVICES -->
+
+          <div class="level-item">
+            <div class="field has-addons has-addons-fullwidth">
+              <div class="control is-expanded has-icons-left">
+                <input class="input is-fullwidth"
+                  type="text"
+                  placeholder="Find"
+                >
+
+                <span class="icon is-left">
+                  <i class="fa fa-search"></i>
+                </span>
+              </div>
+
+              <div class="control is-expanded has-icons-left">
+                <input
+                  class="input is-fullwidth"
+                  type="text"
+                  placeholder="Near"
+                >
+
+                <span class="icon is-left">
+                  <i class="fa fa-map-marker"></i>
+                </span>
+              </div>
+
+              <div class="control is-hidden-mobile">
+                <a class="button is-primary">Search</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- END SEARCHBAR FOR TOUCH DEVICES -->
+
+        <div class="control">
+          <a class="button is-primary is-hidden-tablet">Search</a>
+        </div>
+      </form>
+    </div>
   </div>
 
-  <div class="container">
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        {% include "./partials/GoogleMap.html"%}
-      </div>
+  <div class="section">
+    <div class="container"></div>
 
-      <div class="tile is-parent">
-        {% include "./partials/user-plans.html" %}
-      </div>
-    </div>
+    <div class="container">
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          {% include "./partials/GoogleMap.html"%}
+        </div>
 
-    <!-- FILTER CONTROLS FOR SEARCH RESULTS -->
-
-    <nav class="level">
-      <!-- PRICE DROPDOWN START -->
-
-      <div class="level-item has-text-centered">
-        <div>
-          <div class="dropdown is-hoverable">
-            <div class="dropdown-trigger">
-              <button
-                class="button"
-                aria-haspopup="true"
-                aria-controls="dropdown-menu"
-              >
-                <span>Price</span>
-
-                <span class="icon is-small">
-                  <i
-                    class="fa fa-dollar"
-                    aria-hidden="true"
-                  ></i>
-                </span>
-              </button>
-            </div>
-
-            <div
-              class="dropdown-menu"
-              role="menu"
-            >
-              <div class="dropdown-content">
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
-
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
-
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
-
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-dollar"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- PRICE DROPDOWN END -->
+        <div class="tile is-parent">
+          {% include "./partials/user-plans.html" %}
         </div>
       </div>
 
-      <div class="level-item has-text-centered">
-        <div>
-          <div class="dropdown is-hoverable">
-            <!-- RATING DROPDOWN START -->
+      <!-- FILTER CONTROLS FOR SEARCH RESULTS -->
 
-            <div class="dropdown-trigger">
-              <button
-                class="button"
-                aria-haspopup="true"
-                aria-controls="dropdown-menu"
+      <nav class="level is-mobile">
+        <!-- PRICE DROPDOWN START -->
+
+        <div class="level-item has-text-centered">
+          <div>
+            <div class="dropdown is-hoverable">
+              <div class="dropdown-trigger">
+                <button
+                  class="button"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu"
+                >
+                  <span>Price</span>
+
+                  <span class="icon is-small">
+                    <i
+                      class="fa fa-dollar"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </button>
+              </div>
+
+              <div
+                class="dropdown-menu"
+                role="menu"
               >
-                <span>Rating</span>
+                <div class="dropdown-content">
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
 
-                <span class="icon is-small">
-                  <i
-                    class="fa fa-star"
-                    aria-hidden="true"
-                  ></i>
-                </span>
-              </button>
-            </div>
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
 
-            <div
-              class="dropdown-menu"
-              role="menu"
-            >
-              <div class="dropdown-content">
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
 
-                    &nbsp;
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
 
-                    <i
-                      class="fa fa-plus fa-plus-gray"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
 
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
 
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
 
-                    &nbsp;
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
 
-                    <i
-                      class="fa fa-plus fa-plus-gray"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
 
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    &nbsp;
-
-                    <i
-                      class="fa fa-plus fa-plus-gray"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
-
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    &nbsp;
-
-                    <i
-                      class="fa fa-plus fa-plus-gray"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
-
-                <a
-                  href="#"
-                  class="dropdown-item"
-                >
-                  <span class="icon is-small">
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-
-                    <i
-                      class="fa fa-star"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </a>
+                      <i
+                        class="fa fa-dollar"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="level-item has-text-centered">
+        <!-- PRICE DROPDOWN END -->
+        <!-- RATING DROPDOWN START -->
+
+        <div class="level-item has-text-centered">
+          <div>
+            <div class="dropdown is-hoverable">
+              <div class="dropdown-trigger">
+                <button
+                  class="button"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu"
+                >
+                  <span>Rating</span>
+
+                  <span class="icon is-small">
+                    <i
+                      class="fa fa-star"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </button>
+              </div>
+
+              <div
+                class="dropdown-menu"
+                role="menu"
+              >
+                <div class="dropdown-content">
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      &nbsp;
+
+                      <i
+                        class="fa fa-plus fa-plus-gray"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      &nbsp;
+
+                      <i
+                        class="fa fa-plus fa-plus-gray"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      &nbsp;
+
+                      <i
+                        class="fa fa-plus fa-plus-gray"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      &nbsp;
+
+                      <i
+                        class="fa fa-plus fa-plus-gray"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    <span class="icon is-small">
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+
+                      <i
+                        class="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- END RATING FILTER -->
         <!-- START CATEGORY FILTER -->
 
-        <div class="dropdown is-hoverable">
-          <div class="dropdown-trigger">
-            <button
-              class="button"
-              aria-haspopup="true"
-              aria-controls="dropdown-menu"
-            >
-              <span>Category</span>
-
-              <span class="icon is-small">
-                <i
-                  class="fa fa-angle-down"
-                  aria-hidden="true"
-                ></i>
-              </span>
-            </button>
-          </div>
-
-          <div
-            class="dropdown-menu"
-            role="menu"
-          >
-            <div class="dropdown-content">
-              <a
-                href="#"
-                class="dropdown-item"
-              >Dropdown item</a>
-
-              <a class="dropdown-item">Other dropdown item</a>
-
-              <a
-                href="#"
-                class="dropdown-item"
-              >Active dropdown item</a>
-
-              <a
-                href="#"
-                class="dropdown-item"
-              >Other dropdown item</a>
-
-              <hr class="dropdown-divider">
-
-              <a
-                href="#"
-                class="dropdown-item"
-              >With a divider</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- END CATEGORY FILTER -->
-      <!-- START DISTANCE FILTER -->
-
-      <div class="level-item has-text-centered">
-        <div class="dropdown is-hoverable">
-          <div class="dropdown-trigger">
-            <button
-              class="button"
-              aria-haspopup="true"
-              aria-controls="dropdown-menu"
-            >
-              <span>Distance</span>
-
-              <span class="icon is-small">
-                <i
-                  class="fa fa-location-arrow"
-                  aria-hidden="true"
-                ></i>
-              </span>
-            </button>
-          </div>
-
-          <div
-            class="dropdown-menu"
-            role="menu"
-          >
-            <div class="dropdown-content">
-              <a
-                href="#"
-                class="dropdown-item"
-              >Dropdown item</a>
-
-              <a class="dropdown-item">Other dropdown item</a>
-
-              <a
-                href="#"
-                class="dropdown-item"
-              >Active dropdown item</a>
-
-              <a
-                href="#"
-                class="dropdown-item"
-              >Other dropdown item</a>
-
-              <hr class="dropdown-divider">
-
-              <a
-                href="#"
-                class="dropdown-item"
-              >With a divider</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- END DISTANCE FILTER -->
-      <!-- START MORE FILTERS FILTER -->
-
-      <div class="level-item has-text-centered">
-        <div class="dropdown is-hoverable">
-          <div class="dropdown-trigger">
+        <div class="level-item has-text-centered">
+          <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger">
               <button
-              class="button"
-              aria-haspopup="true"
-              aria-controls="dropdown-menu"
+                class="button"
+                aria-haspopup="true"
+                aria-controls="dropdown-menu"
+              >
+                <span>Category</span>
+
+                <span class="icon is-small">
+                  <i
+                    class="fa fa-angle-down"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </button>
+            </div>
+
+            <div
+              class="dropdown-menu"
+              role="menu"
             >
-              <span>More</span>
+              <div class="dropdown-content">
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Dropdown item</a>
 
-              <span class="icon">
-                <i
-                  class="fa fa-sliders"
-                  aria-hidden="true"
-                ></i>
-              </span>
-            </button>
-          </div>
+                <a class="dropdown-item">Other dropdown item</a>
 
-          <div
-            class="dropdown-menu"
-            role="menu"
-          >
-            <div class="dropdown-content">
-              <a
-                href="#"
-                class="dropdown-item"
-              >Dropdown item</a>
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Active dropdown item</a>
 
-              <a class="dropdown-item">Other dropdown item</a>
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Other dropdown item</a>
 
-              <a
-                href="#"
-                class="dropdown-item"
-              >Active dropdown item</a>
+                <hr class="dropdown-divider">
 
-              <a
-                href="#"
-                class="dropdown-item"
-              >Other dropdown item</a>
-
-              <hr class="dropdown-divider">
-
-              <a
-                href="#"
-                class="dropdown-item"
-              >With a divider</a>
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >With a divider</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- END MORE FILTERS FILTER -->
-    </nav>
 
-    <!-- END FILTER CONTROL -->
-    <!-- START SAMPLE TILES -->
+        <!-- END CATEGORY FILTER -->
+        <!-- START DISTANCE FILTER -->
 
-    <div class="tile is-ancestor">
-      <div class="tile is-vertical is-8">
-        <div class="tile">
-          <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification is-primary">
-              <p class="title">Vertical...</p>
+        <div class="level-item has-text-centered">
+          <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger">
+              <button
+                class="button"
+                aria-haspopup="true"
+                aria-controls="dropdown-menu"
+              >
+                <span>Distance</span>
 
-              <p class="subtitle">Top tile</p>
-            </article>
+                <span class="icon is-small">
+                  <i
+                    class="fa fa-location-arrow"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </button>
+            </div>
 
-            <article class="tile is-child notification is-warning">
-              <p class="title">...tiles</p>
+            <div
+              class="dropdown-menu"
+              role="menu"
+            >
+              <div class="dropdown-content">
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Dropdown item</a>
 
-              <p class="subtitle">Bottom tile</p>
-            </article>
+                <a class="dropdown-item">Other dropdown item</a>
+
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Active dropdown item</a>
+
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Other dropdown item</a>
+
+                <hr class="dropdown-divider">
+
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >With a divider</a>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <div class="tile is-parent">
-            <article class="tile is-child notification is-info">
-              <p class="title">Middle tile</p>
+        <!-- END DISTANCE FILTER -->
+        <!-- START MORE FILTERS FILTER -->
 
-              <p class="subtitle">With an image</p>
+        <div class="level-item has-text-centered">
+          <div class="dropdown is-hoverable is-right">
+            <div class="dropdown-trigger">
+              <button
+                class="button"
+                aria-haspopup="true"
+                aria-controls="dropdown-menu"
+              >
+                <span>More</span>
 
-              <figure class="image is-4by3">
-                <img src="http://bulma.io/images/placeholders/640x480.png">
-              </figure>
-            </article>
+                <span class="icon">
+                  <i
+                    class="fa fa-sliders"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </button>
+            </div>
+
+            <div
+              class="dropdown-menu"
+              role="menu"
+            >
+              <div class="dropdown-content">
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Dropdown item</a>
+
+                <a class="dropdown-item">Other dropdown item</a>
+
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Active dropdown item</a>
+
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >Other dropdown item</a>
+
+                <hr class="dropdown-divider">
+
+                <a
+                  href="#"
+                  class="dropdown-item"
+                >With a divider</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- END MORE FILTERS FILTER -->
+      </nav>
+
+      <!-- END FILTER CONTROL -->
+      <!-- START SAMPLE TILES -->
+
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <!-- <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-primary">
+                <p class="title">Vertical...</p>
+
+                <p class="subtitle">Top tile</p>
+              </article>
+
+              <article class="tile is-child notification is-warning">
+                <p class="title">...tiles</p>
+
+                <p class="subtitle">Bottom tile</p>
+              </article>
+            </div>
+
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-info">
+                <p class="title">Middle tile</p>
+
+                <p class="subtitle">With an image</p>
+
+                <figure class="image is-4by3">
+                  <img src="http://bulma.io/images/placeholders/640x480.png">
+                </figure>
+              </article>
+            </div> -->
+
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">Wide tile</p>
+
+                <p class="subtitle">Aligned with the right tile</p>
+
+                <div class="content">
+                  <!-- Content -->
+                </div>
+              </article>
+            </div>
           </div>
         </div>
 
         <div class="tile is-parent">
-          <article class="tile is-child notification is-danger">
-            <p class="title">Wide tile</p>
-
-            <p class="subtitle">Aligned with the right tile</p>
-
+          <article class="tile is-child notification is-success">
             <div class="content">
-              <!-- Content -->
+              <p class="title">Tall tile</p>
+
+              <p class="subtitle">With even more content</p>
+
+              <div class="content">
+                <!-- Content -->
+              </div>
             </div>
           </article>
         </div>
       </div>
 
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
-          <div class="content">
-            <p class="title">Tall tile</p>
-
-            <p class="subtitle">With even more content</p>
-
-            <div class="content">
-              <!-- Content -->
-            </div>
-          </div>
-        </article>
-      </div>
+      <!-- END SAMPLE TILES -->
     </div>
-
-    <!-- END SAMPLE TILES -->
   </div>
 
   {% endblock %}
