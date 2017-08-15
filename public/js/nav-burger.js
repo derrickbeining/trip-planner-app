@@ -1,3 +1,11 @@
+  // IDEAS ///////////////////////////
+  /*
+    * enable toggling size of map tile
+    * enable hiding map, being overtaken by search results list
+    *
+  */
+
+
   // BULMA NAVBURGER JS /////////////////////////
 
   document.addEventListener( 'DOMContentLoaded', function () {

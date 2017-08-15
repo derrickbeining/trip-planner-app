@@ -7,52 +7,6 @@
   <div class="container">
     <div class="container is-fluid">
       {% include "./partials/nav-top-main.html" %}
-
-      <form
-        id="search-touch-devices-only"
-        class="field"
-      >
-        <div class="level is-hidden-desktop">
-          <!-- SEARCHBAR FOR TOUCH DEVICES -->
-
-          <div class="level-item">
-            <div class="field has-addons has-addons-fullwidth">
-              <div class="control is-expanded has-icons-left">
-                <input class="input is-fullwidth"
-                  type="text"
-                  placeholder="Find"
-                >
-
-                <span class="icon is-left">
-                  <i class="fa fa-search"></i>
-                </span>
-              </div>
-
-              <div class="control is-expanded has-icons-left">
-                <input
-                  class="input is-fullwidth"
-                  type="text"
-                  placeholder="Near"
-                >
-
-                <span class="icon is-left">
-                  <i class="fa fa-map-marker"></i>
-                </span>
-              </div>
-
-              <div class="control is-hidden-mobile">
-                <a class="button is-primary">Search</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- END SEARCHBAR FOR TOUCH DEVICES -->
-
-        <div class="control">
-          <a class="button is-primary is-hidden-tablet">Search</a>
-        </div>
-      </form>
     </div>
   </div>
 
@@ -556,12 +510,15 @@
 
             <div class="tile is-parent">
               <article class="tile is-child notification">
-                <p class="title">Wide tile</p>
+                <p class="title">Search Results</p>
 
-                <p class="subtitle">Aligned with the right tile</p>
+                <p class="subtitle">Where results feed populates</p>
 
                 <div class="content">
                   <!-- Content -->
+                  {% for result in results %}
+                    {% include "./partials/search-result.html" %}
+                  {% endfor %}
                 </div>
               </article>
             </div>
@@ -569,11 +526,13 @@
         </div>
 
         <div class="tile is-parent">
-          <article class="tile is-child notification is-success">
+          <article class="tile is-child notification">
             <div class="content">
-              <p class="title">Tall tile</p>
+              <p class="title">Short List</p>
 
-              <p class="subtitle">With even more content</p>
+              <p class="subtitle">
+                Where you can save items that catch your eye for later followup
+              </p>
 
               <div class="content">
                 <!-- Content -->
